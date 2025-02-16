@@ -12,10 +12,10 @@ export class Platform extends GameObject{
 
     const mesh = new Mesh(
       new BoxGeometry(width, height, depth),
-      new MeshPhongMaterial({ color: 0x29ADFF })
+      new MeshPhongMaterial({ color: 0x29ADFF, wireframe: true })
     )
-    mesh.position.set(position.x, position.y + height / 2, position.z)
-
+    
     this.group.add(mesh)
+    this.group.position.set(position.x, position.y + height / 2, position.z)
   }
 }

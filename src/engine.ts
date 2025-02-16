@@ -3,12 +3,14 @@ import { Player } from './player'
 import { Controls } from './controls'
 import { Floor } from './floor'
 import { Platform } from './platform'
+import { Collisions } from './collisions'
 
 export class Engine{
   scene = new Scene
   camera = new PerspectiveCamera(75)
   renderer = new WebGLRenderer
   player = new Player
+  collisions = new Collisions(this)
 
   constructor(){
     // Set Controls
@@ -31,6 +33,10 @@ export class Engine{
       position: new Vector3(-4, 2, 0)
     })
     this.scene.add(platform2.group)
+
+    // Add environment objects to Collisions manager
+    this.collisions.gameObjects.push(floor, platform1, platform2)
+    
     // Player
     this.scene.add(this.player.group)
 
@@ -50,6 +56,7 @@ export class Engine{
     this.setRenderer()
     document.body.appendChild(this.renderer.domElement)
     this.renderer.setAnimationLoop(() => this.tick())
+    // this.tick()
   }
 
   setRenderer(){
