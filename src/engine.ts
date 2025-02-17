@@ -30,7 +30,7 @@ export class Engine{
       width: 4,
       height: 1,
       depth: 4,
-      position: new Vector3(-4, 2, 0)
+      position: new Vector3(-4, 1, 0)
     })
     this.scene.add(platform2.group)
 

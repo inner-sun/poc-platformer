@@ -19,7 +19,7 @@ export class Physics{
     RAPIER.init().then(() => {
       this.world = new RAPIER.World({ x: 0.0, y: -9.81, z: 0.0 })
       this.characterController = this.world.createCharacterController(0.01)
-      this.characterController.enableSnapToGround(0.01)
+      this.characterController.enableSnapToGround(0.025)
       this.createInstances()
     })
   }

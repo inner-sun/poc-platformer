@@ -22,6 +22,9 @@ export class Controls{
     if(event.code === 'KeyD'){
       this.player.controllerInput.setX(-1)
     }
+    if(event.code === 'Space'){
+      this.player.controllerInput.setY(1)
+    }
   }
 
   onKeyup(event: KeyboardEvent){
@@ -36,6 +39,9 @@ export class Controls{
     }
     if(event.code === 'KeyD'){
       this.player.controllerInput.setX(0)
+    }
+    if(event.code === 'Space'){
+      this.player.controllerInput.setY(0)
     }
   }
 }

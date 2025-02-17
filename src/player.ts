@@ -27,6 +27,7 @@ export class Player extends GameObject{
   tick(engine: Engine){
     const speed = 0.2
     const movement = this.controllerInput.clone().multiplyScalar(speed)
+    movement.setY(movement.y - 0.1) // gravity
     const newPosition = engine.physics.getValidPosition(movement, this)
     this.group.position.copy(newPosition)
     if (this.rigidBody) this.rigidBody.setTranslation(newPosition, true)
